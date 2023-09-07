@@ -22,8 +22,7 @@ export const updateCart = async (req, res, next) => {
         } else {
           notbeenadd = false;
           if (req.body.products[0].quantity > 0)
-            newarr.push({...req.body.products[0],quantity:(item.quantity+req.body.products[0].quantity)});
-            // newarr.push(req.body.products[0]);
+            newarr.push(req.body.products[0]);
         }
       }
       if (notbeenadd) newarr = [...newarr, req.body.products[0]];
